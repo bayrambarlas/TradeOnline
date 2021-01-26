@@ -13,15 +13,14 @@ public class TradeStepDefinitions {
     @Given("open the Binance home page on Chrome web browser")
     public void open_the_Binance_home_page_on_Chrome_web_browser() {
 
-        basePage.openURL();
-
     }
 
     @When("click The TRADE option on the top menu tool bar to select ADVANCED in the options")
     public void click_The_TRADE_option_on_the_top_menu_tool_bar_to_select_ADVANCED_in_the_options() {
 
-        BrowserUtils.waitFor(2);
-        basePage.trade.click();
+        basePage.print();
+
+
     }
 
     @When("the pop-box should open with a display message to LOGIN")
