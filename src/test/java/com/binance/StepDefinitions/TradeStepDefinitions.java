@@ -12,7 +12,7 @@ public class TradeStepDefinitions {
 
     @Given("open the Binance home page on Chrome web browser")
     public void open_the_Binance_home_page_on_Chrome_web_browser() {
-
+// new method
     }
 
     @When("click The TRADE option on the top menu tool bar to select ADVANCED in the options")
