@@ -1,5 +1,6 @@
 package com.binance.HomePage;
 import com.binance.Utilities.BrowserUtils;
+import com.binance.Utilities.ConfigurationReader;
 import com.binance.Utilities.Driver;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -11,30 +12,19 @@ import java.util.List;
 
 public class BasePage {
 
-    public void TopNavigationBar() {
+    public BasePage() {
 
         PageFactory.initElements(Driver.get(), this);
     }
 
-    @FindBy(linkText = "map")
-    public WebElement map;
+    public void openURL(){
 
-    @FindBy(linkText = "schedule")
-    public WebElement schedule;
+        Driver.get().get(ConfigurationReader.get("url"));
+        BrowserUtils.waitFor(2);
 
-    @FindBy(linkText = "hunt")
-    public WebElement hunt;
+    }
+    @FindBy(xpath = "(//span[@class='hoverstatus css-1qqh4qo'])[3]")
+    public WebElement trade;
 
-    @FindBy(linkText = "my")
-    public WebElement my;
-
-    @FindBy(linkText = "self")
-    public WebElement self;
-
-    @FindBy(linkText = "team")
-    public WebElement team;
-
-    @FindBy(linkText = "sign out")
-    public WebElement signOut;
 
 }
