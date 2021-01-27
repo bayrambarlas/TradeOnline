@@ -10,28 +10,25 @@ public class TradeStepDefinitions {
 
     BasePage basePage = new BasePage();
 
-
-    @When("click The TRADE option on the top menu tool bar to select ADVANCED in the options")
-    public void click_The_TRADE_option_on_the_top_menu_tool_bar_to_select_ADVANCED_in_the_options() {
-
-
-    }
-
-    @When("the pop-box should open with a display message to LOGIN")
-    public void the_pop_box_should_open_with_a_display_message_to_LOGIN() {
-
-    }
-
-    @Then("enter the valid credentials to login to see the CHART")
-    public void enter_the_valid_credentials_to_login_to_see_the_CHART() {
-
-    }
-
-    @Given("open the Binance home page on new Chrome web browser")
-    public void openTheBinanceHomePageOnNewChromeWebBrowser() {
+    @Given("the Binance home page on {string} web browser")
+    public void the_Binance_home_page_on_web_browser(String string) {
 
         basePage.openUrl();
 
+    }
+
+    @When("click the {string} option on the top menu tool bar to select {string}")
+    public void click_the_option_on_the_top_menu_tool_bar_to_select(String string, String string2) {
+
+        BrowserUtils.waitFor(3);
+        basePage.tradeOptions.click();
 
     }
+
+    @When("trader able to see {string} trade chart feature")
+    public void trader_able_to_see_trade_chart_feature(String string) {
+
+    }
+
+
 }

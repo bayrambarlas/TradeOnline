@@ -24,9 +24,10 @@ public class BasePage {
         System.out.println("Open URL to create new order!");
     }
 
-    @FindBy(linkText = "map")
-    public WebElement map;
+    @FindBy(xpath = "(//*[@class=\"hoverstatus css-1qqh4qo\"])[3]")
+    public WebElement tradeOptions;
 
-
+    @FindBy(xpath = "//*[@id=\"__APP\"]/div[2]/header/div[3]/span/text()")
+    public WebElement tradeOptions2;
 
 }
