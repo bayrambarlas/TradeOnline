@@ -1,34 +1,38 @@
 package com.binance.StepDefinitions;
 
 import com.binance.HomePage.BasePage;
+import com.binance.HomePage.TopNavigationBar;
 import com.binance.Utilities.BrowserUtils;
+import com.binance.Utilities.ConfigurationReader;
+import com.binance.Utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 
 public class TradeStepDefinitions {
 
-    BasePage basePage = new BasePage();
+    TopNavigationBar navigationBar = new TopNavigationBar();
 
-    @Given("the Binance home page on {string} web browser")
-    public void the_Binance_home_page_on_web_browser(String string) {
+    @Given("the Binance home page on Chrome web browser")
+    public void the_Binance_home_page_on_Chrome_web_browser() {
 
-        basePage.openUrl();
-
-    }
-
-    @When("click the {string} option on the top menu tool bar to select {string}")
-    public void click_the_option_on_the_top_menu_tool_bar_to_select(String string, String string2) {
-
+        Driver.get().get(ConfigurationReader.get("url"));
         BrowserUtils.waitFor(3);
-        basePage.tradeOptions.click();
 
     }
 
-    @When("trader able to see {string} trade chart feature")
-    public void trader_able_to_see_trade_chart_feature(String string) {
+    @When("click the Trade option on the top menu tool bar to select Convert")
+    public void click_the_Trade_option_on_the_top_menu_tool_bar_to_select_Convert() {
 
+       navigationBar.goConvert();
     }
 
+    @Then("trader able to see USD-BTC converting feature")
+    public void trader_able_to_see_USD_BTC_converting_feature() {
+
+        System.out.println(BrowserUtils.getElementsText(By.xpath("//h1[@class='main css-vurnku']")));
+
+    }
 
 }

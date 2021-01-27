@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/",
         glue = "com/binance/StepDefinitions/",
         dryRun = false,
-        tags = " @ETH"
+        tags = " @BTC"
 )
 public class CukesRunner {
 }

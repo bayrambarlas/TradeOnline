@@ -17,15 +17,15 @@ public class Hooks {
         Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @After
-    public void tearDown(Scenario scenario) {
-        // only takes a screenshot if the scenario fails
-        if (scenario.isFailed()) {
-            // taking a screenshot
-            final byte[] screenshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
-            scenario.embed(screenshot, "image/png");
-        }
-        Driver.closeDriver();
-    }
+//    @After
+//    public void tearDown(Scenario scenario) {
+//        // only takes a screenshot if the scenario fails
+//        if (scenario.isFailed()) {
+//            // taking a screenshot
+//            final byte[] screenshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
+//            scenario.embed(screenshot, "image/png");
+//        }
+//        Driver.closeDriver();
+//    }
 
 }
