@@ -49,7 +49,7 @@ public class TradeStepDefinitions {
         navigationBar.ClosePopup.click();
         BrowserUtils.waitForVisibility(navigationBar.SearchBox, 3);
         navigationBar.SearchBox.sendKeys("alg");
-        BrowserUtils.waitForVisibility(navigationBar.AlgoBusd, 3);
+       BrowserUtils.clickWithTimeOut(navigationBar.AlgoBusd, 5);
 
     }
 
