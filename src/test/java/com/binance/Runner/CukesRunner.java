@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         plugin = {"json:target/cucumber.json",
                 "html:target/default-html-reports"},
         features = "src/test/resources/features/",
-        glue = "src/test/java/com/binance/StepDefinitions/",
+        glue = "com/binance/StepDefinitions/",
         dryRun = false,
         tags = "@BTC"
 )
