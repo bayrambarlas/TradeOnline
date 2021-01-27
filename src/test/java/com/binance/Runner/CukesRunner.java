@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
                 "html:target/default-html-reports"},
         features = "src/test/resources/features/",
         glue = "src/test/java/com/binance/StepDefinitions/",
-        dryRun = true,
+        dryRun = false,
         tags = "@BTC"
 )
 public class CukesRunner {
