@@ -56,6 +56,16 @@ public class TopNavigationBar extends BasePage {
 	@FindBy(xpath = "(//*[@class=\"css-8qwo6f\"])[8]")
 	public WebElement ClosePopup;
 
+	@FindBy(xpath = "(//svg[@class=\"css-8qwo6f\"]")
+	public WebElement ClosePopup2;
+
+
+
+	@FindBy(xpath = "(//div[@class=\"css-kdvr7r\"]")
+	public WebElement SearchHover;
+
+	@FindBy(xpath = "//span[@class='css-1u36uja']")
+	public WebElement SearchBox2;
 
 
 	public void goConvert() {
@@ -73,6 +83,6 @@ public class TopNavigationBar extends BasePage {
 	public void goAdvanced() {
 		Actions actions = new Actions(Driver.get());
 		actions.moveToElement(Trade).perform();
-		BrowserUtils.waitForClickablility(advanced,3);
+		BrowserUtils.clickWithWait(By.xpath("//a[@id='ba-Advanced']"), 3);
 	}
 }

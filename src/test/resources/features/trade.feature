@@ -16,3 +16,12 @@ Feature:
     And enter the currency name
     Then trader able to see ALG-BUSD trading feature
 
+  @ALG2
+  Scenario: Trader able to see ALG BUSD option
+
+    Given the Binance home page on Chrome web browser
+    When click the Trade option on the top menu tool bar to select Advanced
+    And hover over on the coin currency pair
+    Then enter the currency name
+    Then trader able to see ALG-BUSD trading feature
+

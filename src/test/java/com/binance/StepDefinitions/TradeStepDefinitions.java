@@ -5,6 +5,7 @@ import com.binance.HomePage.TopNavigationBar;
 import com.binance.Utilities.BrowserUtils;
 import com.binance.Utilities.ConfigurationReader;
 import com.binance.Utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -58,4 +59,19 @@ public class TradeStepDefinitions {
 
     }
 
+    @When("click the Trade option on the top menu tool bar to select Advanced")
+    public void click_the_Trade_option_on_the_top_menu_tool_bar_to_select_Advanced() {
+
+        navigationBar.goAdvanced();
+    }
+
+    @And("hover over on the coin currency pair")
+    public void hover_over_on_the_coin_currency_pair() {
+
+        navigationBar.ClosePopup2.click();
+        BrowserUtils.waitForVisibility(navigationBar.SearchBox, 3);
+        BrowserUtils.hover(navigationBar.SearchHover);
+        BrowserUtils.waitFor(1);
+
+    }
 }
