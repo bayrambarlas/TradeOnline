@@ -1,4 +1,4 @@
-package com.binance.Utilities;
+package com.finance.Utilities;
 import java.io.FileInputStream;
 import java.util.Properties;
 

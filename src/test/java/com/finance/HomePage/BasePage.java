@@ -1,9 +1,6 @@
-package com.binance.HomePage;
-import com.binance.Utilities.BrowserUtils;
-import com.binance.Utilities.ConfigurationReader;
-import com.binance.Utilities.Driver;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
+package com.finance.HomePage;
+import com.finance.Utilities.ConfigurationReader;
+import com.finance.Utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;

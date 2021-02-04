@@ -1,15 +1,13 @@
-package com.binance.StepDefinitions;
+package com.finance.StepDefinitions;
 
-import com.binance.HomePage.BasePage;
-import com.binance.HomePage.TopNavigationBar;
-import com.binance.Utilities.BrowserUtils;
-import com.binance.Utilities.ConfigurationReader;
-import com.binance.Utilities.Driver;
+import com.finance.HomePage.TopNavigationBar;
+import com.finance.Utilities.BrowserUtils;
+import com.finance.Utilities.ConfigurationReader;
+import com.finance.Utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 
 public class TradeStepDefinitions {

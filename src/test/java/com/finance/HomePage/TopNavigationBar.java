@@ -1,7 +1,7 @@
-package com.binance.HomePage;
+package com.finance.HomePage;
 
-import com.binance.Utilities.BrowserUtils;
-import com.binance.Utilities.Driver;
+import com.finance.Utilities.BrowserUtils;
+import com.finance.Utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
