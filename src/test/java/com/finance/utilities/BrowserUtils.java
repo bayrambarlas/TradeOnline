@@ -1,4 +1,4 @@
-package com.finance.Utilities;
+package com.finance.utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;
@@ -18,14 +18,14 @@ public class BrowserUtils {
      * @param targetTitle
      */
     public static void switchToWindow(String targetTitle) {
-        String origin = com.finance.Utilities.Driver.get().getWindowHandle();
-        for (String handle : com.finance.Utilities.Driver.get().getWindowHandles()) {
-            com.finance.Utilities.Driver.get().switchTo().window(handle);
-            if (com.finance.Utilities.Driver.get().getTitle().equals(targetTitle)) {
+        String origin = com.finance.utilities.Driver.get().getWindowHandle();
+        for (String handle : com.finance.utilities.Driver.get().getWindowHandles()) {
+            com.finance.utilities.Driver.get().switchTo().window(handle);
+            if (com.finance.utilities.Driver.get().getTitle().equals(targetTitle)) {
                 return;
             }
         }
-        com.finance.Utilities.Driver.get().switchTo().window(origin);
+        com.finance.utilities.Driver.get().switchTo().window(origin);
     }
 
     /**
@@ -34,8 +34,8 @@ public class BrowserUtils {
      * @param element on which to hover
      */
     public static void hover(WebElement element) {
-        Actions actions = new Actions(com.finance.Utilities.Driver.get());
-        actions.moveToElement(element).perform();
+        Actions actions = new Actions(com.finance.utilities.Driver.get());
+        actions.moveToElement(element).click(element).perform();
     }
 
     /**
@@ -60,7 +60,7 @@ public class BrowserUtils {
      */
     public static List<String> getElementsText(By locator) {
 
-        List<WebElement> elems = com.finance.Utilities.Driver.get().findElements(locator);
+        List<WebElement> elems = com.finance.utilities.Driver.get().findElements(locator);
         List<String> elemTexts = new ArrayList<>();
 
         for (WebElement el : elems) {
@@ -90,7 +90,7 @@ public class BrowserUtils {
      * @return
      */
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
-        WebDriverWait wait = new WebDriverWait(com.finance.Utilities.Driver.get(), timeToWaitInSec);
+        WebDriverWait wait = new WebDriverWait(com.finance.utilities.Driver.get(), timeToWaitInSec);
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -102,7 +102,7 @@ public class BrowserUtils {
      * @return
      */
     public static WebElement waitForVisibility(By locator, int timeout) {
-        WebDriverWait wait = new WebDriverWait(com.finance.Utilities.Driver.get(), timeout);
+        WebDriverWait wait = new WebDriverWait(com.finance.utilities.Driver.get(), timeout);
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
@@ -114,7 +114,7 @@ public class BrowserUtils {
      * @return
      */
     public static WebElement waitForClickablility(WebElement element, int timeout) {
-        WebDriverWait wait = new WebDriverWait(com.finance.Utilities.Driver.get(), timeout);
+        WebDriverWait wait = new WebDriverWait(com.finance.utilities.Driver.get(), timeout);
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
@@ -126,7 +126,7 @@ public class BrowserUtils {
      * @return
      */
     public static WebElement waitForClickablility(By locator, int timeout) {
-        WebDriverWait wait = new WebDriverWait(com.finance.Utilities.Driver.get(), timeout);
+        WebDriverWait wait = new WebDriverWait(com.finance.utilities.Driver.get(), timeout);
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
@@ -142,7 +142,7 @@ public class BrowserUtils {
             }
         };
         try {
-            WebDriverWait wait = new WebDriverWait(com.finance.Utilities.Driver.get(), timeOutInSeconds);
+            WebDriverWait wait = new WebDriverWait(com.finance.utilities.Driver.get(), timeOutInSeconds);
             wait.until(expectation);
         } catch (Throwable error) {
             error.printStackTrace();
@@ -157,7 +157,7 @@ public class BrowserUtils {
      */
     public static void verifyElementDisplayed(By by) {
         try {
-            Assert.assertTrue("Element not visible: " + by, com.finance.Utilities.Driver.get().findElement(by).isDisplayed());
+            Assert.assertTrue("Element not visible: " + by, com.finance.utilities.Driver.get().findElement(by).isDisplayed());
         } catch (NoSuchElementException e) {
             e.printStackTrace();
             Assert.fail("Element not found: " + by);
@@ -173,7 +173,7 @@ public class BrowserUtils {
      */
     public static void verifyElementNotDisplayed(By by) {
         try {
-            Assert.assertFalse("Element should not be visible: " + by, com.finance.Utilities.Driver.get().findElement(by).isDisplayed());
+            Assert.assertFalse("Element should not be visible: " + by, com.finance.utilities.Driver.get().findElement(by).isDisplayed());
         } catch (NoSuchElementException e) {
             e.printStackTrace();
 
@@ -235,8 +235,8 @@ public class BrowserUtils {
      * @param element
      */
     public static void clickWithJS(WebElement element) {
-        ((JavascriptExecutor) com.finance.Utilities.Driver.get()).executeScript("arguments[0].scrollIntoView(true);", element);
-        ((JavascriptExecutor) com.finance.Utilities.Driver.get()).executeScript("arguments[0].click();", element);
+        ((JavascriptExecutor) com.finance.utilities.Driver.get()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) com.finance.utilities.Driver.get()).executeScript("arguments[0].click();", element);
     }
 
 
@@ -246,7 +246,7 @@ public class BrowserUtils {
      * @param element
      */
     public static void scrollToElement(WebElement element) {
-        ((JavascriptExecutor) com.finance.Utilities.Driver.get()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) com.finance.utilities.Driver.get()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
     /**
@@ -255,7 +255,7 @@ public class BrowserUtils {
      * @param element
      */
     public static void doubleClick(WebElement element) {
-        new Actions(com.finance.Utilities.Driver.get()).doubleClick(element).build().perform();
+        new Actions(com.finance.utilities.Driver.get()).doubleClick(element).build().perform();
     }
 
     /**
@@ -266,7 +266,7 @@ public class BrowserUtils {
      * @param attributeValue
      */
     public static void setAttribute(WebElement element, String attributeName, String attributeValue) {
-        ((JavascriptExecutor) com.finance.Utilities.Driver.get()).executeScript("arguments[0].setAttribute(arguments[1], arguments[2]);", element, attributeName, attributeValue);
+        ((JavascriptExecutor) com.finance.utilities.Driver.get()).executeScript("arguments[0].setAttribute(arguments[1], arguments[2]);", element, attributeName, attributeValue);
     }
 
     /**
@@ -274,9 +274,9 @@ public class BrowserUtils {
      * @param element
      */
     public static void highlight(WebElement element) {
-        ((JavascriptExecutor) com.finance.Utilities.Driver.get()).executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
+        ((JavascriptExecutor) com.finance.utilities.Driver.get()).executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
         waitFor(1);
-        ((JavascriptExecutor) com.finance.Utilities.Driver.get()).executeScript("arguments[0].removeAttribute('style', 'background: yellow; border: 2px solid red;');", element);
+        ((JavascriptExecutor) com.finance.utilities.Driver.get()).executeScript("arguments[0].removeAttribute('style', 'background: yellow; border: 2px solid red;');", element);
     }
 
     /**
@@ -320,7 +320,7 @@ public class BrowserUtils {
      * @param element
      */
     public static void executeJScommand(WebElement element, String command) {
-        JavascriptExecutor jse = (JavascriptExecutor) com.finance.Utilities.Driver.get();
+        JavascriptExecutor jse = (JavascriptExecutor) com.finance.utilities.Driver.get();
         jse.executeScript(command, element);
 
     }
@@ -331,7 +331,7 @@ public class BrowserUtils {
      * @param command
      */
     public static void executeJScommand(String command) {
-        JavascriptExecutor jse = (JavascriptExecutor) com.finance.Utilities.Driver.get();
+        JavascriptExecutor jse = (JavascriptExecutor) com.finance.utilities.Driver.get();
         jse.executeScript(command);
 
     }
@@ -350,7 +350,7 @@ public class BrowserUtils {
         while (counter < attempts) {
             try {
                 //selenium must look for element again
-                clickWithJS(com.finance.Utilities.Driver.get().findElement(by));
+                clickWithJS(com.finance.utilities.Driver.get().findElement(by));
                 //if click is successful - then break
                 break;
             } catch (WebDriverException e) {
@@ -372,7 +372,7 @@ public class BrowserUtils {
      * @param time
      */
     public static void waitForPresenceOfElement(By by, long time) {
-        new WebDriverWait(com.finance.Utilities.Driver.get(), time).until(ExpectedConditions.presenceOfElementLocated(by));
+        new WebDriverWait(com.finance.utilities.Driver.get(), time).until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
 

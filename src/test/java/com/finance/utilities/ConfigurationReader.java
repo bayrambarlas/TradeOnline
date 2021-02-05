@@ -1,10 +1,8 @@
-package com.finance.Utilities;
+package com.finance.utilities;
 import java.io.FileInputStream;
 import java.util.Properties;
 
-/**
- * reads the properties file configuration.properties
- */
+// This method reads the properties file configuration.properties
 
 public class ConfigurationReader {
 
