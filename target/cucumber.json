@@ -1,0 +1,218 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2021-02-05T08:19:58.777Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4307969600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openProper()"
+            }
+          }
+        ],
+        "line": 5,
+        "name": "Change the country on WU main page",
+        "description": "",
+        "id": "load-wu-a-country-home-page-and-find-a-local-agent;change-the-country-on-wu-main-page",
+        "after": [
+          {
+            "result": {
+              "duration": 825829200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.breakPoint(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 9922871000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user at WU main page and accept the cookies",
+            "match": {
+              "location": "FinanceStepDefinitions.userAtWUMainPageAndAcceptTheCookies()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 10466060100,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user expands Burger menu select Settings page",
+            "match": {
+              "location": "FinanceStepDefinitions.userExpandsBurgerMenuSelectSettingsPage()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 5605202400,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "change WU.com page to United States as selected country",
+            "match": {
+              "location": "FinanceStepDefinitions.changeWUComPageToUnitedStatesAsSelectedCountry()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1617656200,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "the selected country page must be loaded",
+            "match": {
+              "location": "FinanceStepDefinitions.the_selected_country_page_must_be_loaded()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Gainers"
+          },
+          {
+            "name": "@Country"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-02-05T08:20:31.626Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1505637500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.openProper()"
+            }
+          }
+        ],
+        "line": 26,
+        "name": "Search for open agent locations near my Zip code",
+        "description": "",
+        "id": "load-wu-a-country-home-page-and-find-a-local-agent;search-for-open-agent-locations-near-my-zip-code;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 769744100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.breakPoint(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 10299753300,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "user at WU main page and accept the cookies",
+            "match": {
+              "location": "FinanceStepDefinitions.userAtWUMainPageAndAcceptTheCookies()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 11947533900,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user click the FIND LOCATION option from the top menu",
+            "match": {
+              "location": "FinanceStepDefinitions.user_click_the_FIND_LOCATION_option_from_the_top_menu()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3238340500,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "enter a \"08247\" to find the open agent",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"08247\"",
+                  "offset": 8
+                }
+              ],
+              "location": "FinanceStepDefinitions.enter_a_to_find_the_open_agent(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 453250600,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "click the CONTINUE button to search",
+            "match": {
+              "location": "FinanceStepDefinitions.click_the_CONTINUE_button_to_search()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1466867700,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user must see the address details of the first location",
+            "match": {
+              "location": "FinanceStepDefinitions.user_must_see_the_address_details_of_the_first_location()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Gainers"
+          },
+          {
+            "name": "@ZipCode"
+          }
+        ]
+      }
+    ],
+    "name": "Load WU a country home page and find a local agent",
+    "description": "",
+    "id": "load-wu-a-country-home-page-and-find-a-local-agent",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/finance.feature",
+    "tags": [
+      {
+        "name": "@Gainers",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
